@@ -13,6 +13,7 @@ def get_torchbiggraph_config():
         # I/O data
         entity_path="data/afit",
         edge_paths=[
+            # stored in ~/miniconda/lib/python3.7/site-packages/torchbiggraph
             "data/afit/afit_train_partitioned",
             "data/afit/afit_triples_valid_partitioned",
             "data/afit/afit_triples_test_partitioned",
@@ -37,13 +38,13 @@ def get_torchbiggraph_config():
         comparator='dot',
 
         # Training
-        num_epochs=50,
-        num_uniform_negs=1000,
+        num_epochs=500,
+        num_uniform_negs=10,#1000,
         loss_fn='softmax',
-        lr=0.1,
+        lr=0.01,
 
         # Evaluation during training
-        eval_fraction=0,  # to reproduce results, we need to use all training data
+        eval_fraction=.05,  # to reproduce results, we need to use all training data
     )
 
     return config

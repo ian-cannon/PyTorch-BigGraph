@@ -46,6 +46,7 @@ def main():
     parser.add_argument('--config', default=DEFAULT_CONFIG,
                         help='Path to config file')
     parser.add_argument('-p', '--param', action='append', nargs='*')
+    # output stored at: /home/icannon/code/AFIT_hypu_parser/PyTorch-BigGraph/model/afit
     parser.add_argument('--data_dir', type=Path, default='data',
                         help='where to save processed data')
     parser.add_argument('--no-filtered', dest='filtered', action='store_false',
@@ -64,8 +65,8 @@ def main():
     # print('Downloaded and extracted file.')
 
     # must be absolute path to the test, train, valid data
-    test = Path("/home/icannon/code/AFIT_hypu_parser/AFIT_hypo_test.tsv")
     trainn = Path("/home/icannon/code/AFIT_hypu_parser/AFIT_hypo_train.tsv")
+    test = Path("/home/icannon/code/AFIT_hypu_parser/AFIT_hypo_test.tsv")
     valid = Path("/home/icannon/code/AFIT_hypu_parser/AFIT_hypo_valid.tsv")
     shutil.copy(test, data_dir)
     shutil.copy(trainn, data_dir)
